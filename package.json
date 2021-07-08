@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "webpack --mode production",
-    "build:dev": "webpack -w --mode development"
+    "build:dev": "webpack -w --mode development",
+    "server:dev": "npx nodemon server/index.js"
   },
   "dependencies": {
     "axios": "^0.21.1",

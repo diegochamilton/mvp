@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  background-color: rgb(240, 236, 236);
+}
+
+h2,
+p {
+  margin-left: 30px;
+}
+.header {
+  position: fixed;
+  background-color: #1d4289;
+  z-index: 10;
+  min-height: 50px;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-family: Dyno Sans, sans-serif !important;
+}
+
+.games {
+  padding-top: 140px;
+}
+
+.backgroundGame {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gameContainer {
+  border-radius: 10px;
+  display: flex;
+  background-color: white;
+  width: 90%;
+  margin-bottom: 10px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameContainer:hover {
+  background-color: rgb(238, 234, 234);
+  opacity: 0.8;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+}
+
+.logoContainer {
+  height: 24px;
+  width: 24px;
+  padding: 8px;
+}
+.logo {
+  height: 100%;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.teamContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+}
+
+.awayTeam {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 45%;
+}
+
+.homeTeam {
+  display: flex;
+  align-items: center;
+  width: 45%;
+}
