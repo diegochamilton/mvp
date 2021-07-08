@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-
-
-const predictScore = (team1, team2) => {
-  console.log("this is team1: ", team1)
-};
+import Stats from "./Stats.jsx";
 
 const Modal = ({open, children, onClose, teams}) => {
   if (!open) return null;
@@ -15,22 +11,22 @@ const Modal = ({open, children, onClose, teams}) => {
     .then(({data}) => setMatchResults(data))
     .catch(err => console.log(err))
   }, [])
-
-  console.log(matchResults)
   const home = teams.team2;
   const away = teams.team1;
-
-
   return ReactDOM.createPortal(
     <>
       <div className="overlay"/>
       <div className="modal">
         <button onClick={onClose}>x</button>
-      </div>
-      <div className="information">
-        <a href="https://betway.com/en/sports/grp/basketball/usa/nba" target="_blank">
-          <div style={{cursor: "pointer"}}><u>I want to place a bet</u></div>
-        </a>
+        <div className="information">
+          <Stats home={home} away={away} results={matchResults}/>
+          <div>
+            <a href="https://betway.com/en/sports/grp/basketball/usa/nba" target="_blank">
+              <div style={{cursor: "pointer"}}><u>I want to place a bet</u></div>
+            </a>
+          </div>
+
+        </div>
       </div>
     </>,
     document.getElementById("portal")

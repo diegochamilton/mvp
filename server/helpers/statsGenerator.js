@@ -26,35 +26,35 @@ const getAssists = () => {
 const getPoints = (homeID, awayID) => {
   const ranking = {
     1: 4,
-    2: 2,
-    3: 8,
-    4: 6,
-    5: 3,
+    2: 4,
+    3: 7,
+    4: 5,
+    5: 1,
     6: 7,
-    7: 8,
+    7: 9,
     8: 9,
-    9: 7,
-    10: 5,
+    9: 5,
+    10: 3,
     11: 4,
-    12: 2,
-    13: 6,
-    14: 1,
+    12: 1,
+    13: 4,
+    14: 0,
     15: 9,
     16: 2,
-    17: 9,
-    18: 4,
-    19: 6,
+    17: 10,
+    18: 2,
+    19: 7,
     20: 8,
-    21: 5,
-    22: 3,
-    23: 3,
+    21: 6,
+    22: 1,
+    23: 4,
     24: 4,
     25: 7,
     26: 6,
     27: 7,
     28: 8,
-    29: 9,
-    30: 2,
+    29: 10,
+    30: 3,
   };
   if (ranking[homeID] > ranking[awayID]) {
     var differential = ranking[homeID] - ranking[awayID];
@@ -63,8 +63,9 @@ const getPoints = (homeID, awayID) => {
         Math.floor(Math.random() * (120 - 95) + 95) + differential * 0.75
       ),
       awayScore: Math.round(
-        Math.floor(Math.random() * (115 - 90) + 90) - differential * 0.75
+        Math.floor(Math.random() * (115 - 93) + 93) - differential * 0.75
       ),
+      handicap: differential * 0.75 * 2 + 2,
     };
   } else if (ranking[homeID] < ranking[awayID]) {
     var differential = ranking[awayID] - ranking[homeID];
@@ -73,13 +74,15 @@ const getPoints = (homeID, awayID) => {
         Math.floor(Math.random() * (120 - 95) + 95) - differential * 0.75
       ),
       awayScore: Math.round(
-        Math.floor(Math.random() * (115 - 90) + 90) + differential * 0.75
+        Math.floor(Math.random() * (115 - 93) + 93) + differential * 0.75
       ),
+      handicap: differential * 0.75 * 2,
     };
   } else {
     return {
       homeScore: Math.round(Math.floor(Math.random() * (120 - 95) + 95)),
-      awayScore: Math.round(Math.floor(Math.random() * (115 - 90) + 90)),
+      awayScore: Math.round(Math.floor(Math.random() * (115 - 93) + 93)),
+      handicap: 4.5,
     };
   }
 };
@@ -145,6 +148,7 @@ const getMatchResults = (homeID, awayID) => {
       ft: homeStats.throws.ftm,
       "3p": homeStats.triples.fgm,
       "3pa": homeStats.triples.fga,
+      handicap: score.handicap,
     },
     away: {
       points: score.awayScore,
@@ -160,6 +164,7 @@ const getMatchResults = (homeID, awayID) => {
       ft: awayStats.throws.ftm,
       "3p": awayStats.triples.fgm,
       "3pa": awayStats.triples.fga,
+      handicap: score.handicap,
     },
   };
 };
