@@ -163,3 +163,5 @@ const getMatchResults = (homeID, awayID) => {
     },
   };
 };
+
+module.exports.getMatchResults = getMatchResults;

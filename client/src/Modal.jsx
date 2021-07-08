@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import axios from "axios";
+
 
 const predictScore = (team1, team2) => {
   console.log("this is team1: ", team1)
 };
 
 const Modal = ({open, children, onClose, teams}) => {
-  predictScore(teams.team1, teams.team2)
-  if (!open) return null
+  if (!open) return null;
+  const [matchResults, setMatchResults] = useState({});
+  useEffect(() => {
+    axios.get(`/odds?team1=${teams.team1.TeamID}&team2=${teams.team2.TeamID}`)
+    .then(({data}) => setMatchResults(data))
+    .catch(err => console.log(err))
+  }, [])
+
+  console.log(matchResults)
+  const home = teams.team2;
+  const away = teams.team1;
+
 
   return ReactDOM.createPortal(
     <>
@@ -20,7 +32,6 @@ const Modal = ({open, children, onClose, teams}) => {
           <div style={{cursor: "pointer"}}><u>I want to place a bet</u></div>
         </a>
       </div>
-
     </>,
     document.getElementById("portal")
   )
