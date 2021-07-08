@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import IndividualGame from "./IndividualGame.jsx"
+import IndividualGame from "./IndividualGame.jsx";
 
 class Games extends React.Component {
   constructor() {

@@ -3,6 +3,7 @@ const parser = require("body-parser");
 const { getStats, getTeams } = require("./helpers/apiHelpers.js");
 // const app = express();
 const PORT = 8000;
+const mockData = require("../mockData.js");
 
 let app = express();
 app.use(parser.json());
@@ -10,14 +11,16 @@ app.use(parser.json());
 app.use(express.static(__dirname + "/../public"));
 
 app.get("/teams", (req, res) => {
-  getTeams()
-    .then(({ data }) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.sendStatus(500);
-    });
+  res.send(mockData);
+  // getTeams()
+  //   .then(({ data }) => {
+  //     console.log(data);
+  //     res.send(data);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.sendStatus(500);
+  //   });
 });
 
 app.get("/odds", (req, res) => {});

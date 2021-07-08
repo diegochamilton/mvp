@@ -3,11 +3,38 @@ body {
   background-color: rgb(240, 236, 236);
 }
 
-h2,
-p {
-  margin-left: 30px;
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 50px;
+  z-index: 1000;
+  height: 540px;
+  width: 520px;
 }
+
+.information {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
 .header {
+  padding-left: 80px;
   position: fixed;
   background-color: #1d4289;
   z-index: 10;
@@ -16,6 +43,29 @@ p {
   color: white;
   font-weight: bold;
   font-family: Dyno Sans, sans-serif !important;
+}
+
+.footer {
+  margin-top: 30px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #1d4289;
+  height: 100px;
+  color: white;
+  font-weight: bold;
+  font-family: Dyno Sans, sans-serif !important;
+}
+
+.nbaContainer {
+  height: 100px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .games {
@@ -50,7 +100,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 10%;
+}
+
+.reactIcons {
+  height: 14px;
+  width: 14px;
 }
 
 .logoContainer {
@@ -61,6 +117,7 @@ p {
 .logo {
   height: 100%;
   width: 100%;
+  object-fit: contain;
 }
 
 .button {

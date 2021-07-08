@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../Modal.jsx";
+import { BsFillClockFill as Time } from "react-icons/bs";
 
 const randomDate = () => {
   var matchTimes = [
@@ -14,12 +16,13 @@ const randomDate = () => {
 };
 
 const Game = ({ team1, team2, onClick }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="gameContainer">
       <div className="teamContainer">
         <div className="awayTeam">
           <span>
-            {team1.City} {team1.Name} {"    "}
+            {team1.City} {team1.Name}
           </span>
           <div className="logoContainer">
             <img
@@ -29,7 +32,12 @@ const Game = ({ team1, team2, onClick }) => {
             ></img>
           </div>
         </div>
-        <div className="date">{randomDate()}</div>
+        <div className="date">
+          <div>
+            <Time className="reactIcons" />
+          </div>
+          <div>{randomDate()}</div>
+        </div>
         <div className="homeTeam">
           <div className="logoContainer">
             <img
@@ -44,10 +52,13 @@ const Game = ({ team1, team2, onClick }) => {
         </div>
       </div>
       <div className="button">
-        <button>Predict Score</button>
+        <button onClick={() => setIsOpen(true)}>Predict Score</button>
+        <Modal open={isOpen} onClose={() => setIsOpen(false)} />
       </div>
     </div>
   );
 };
+
+const predictScore = (team1, team2) => {};
 
 export default Game;
