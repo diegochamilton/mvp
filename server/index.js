@@ -23,7 +23,20 @@ app.get("/teams", (req, res) => {
   //   });
 });
 
-app.get("/odds", (req, res) => {});
+app.get("/odds", (req, res) => {
+  const odds = {
+    home: {
+      low: 95,
+      high: 120,
+    },
+    away: {
+      low: 90,
+      high: 112,
+    },
+  };
+  const home = req.body.team2;
+  const away = req.body.team1;
+});
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

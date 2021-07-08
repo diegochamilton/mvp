@@ -53,12 +53,14 @@ const Game = ({ team1, team2, onClick }) => {
       </div>
       <div className="button">
         <button onClick={() => setIsOpen(true)}>Predict Score</button>
-        <Modal open={isOpen} onClose={() => setIsOpen(false)} />
+        <Modal
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          teams={{ team1, team2 }}
+        />
       </div>
     </div>
   );
 };
-
-const predictScore = (team1, team2) => {};
 
 export default Game;
