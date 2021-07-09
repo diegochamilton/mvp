@@ -56,8 +56,13 @@ const Stats = ({home, away, results}) => {
         {values.map((value, i) => <CreateHomeStat value={value} home={results.home} key={i}/>)}
       </div>
     </div>
-    <div>
-      Handicap: {handicap}
+    <div className="modalFooter">
+      <span>Handicap: {handicap}</span>
+      <div>
+            <a href="https://betway.com/en/sports/grp/basketball/usa/nba" target="_blank">
+              <div style={{cursor: "pointer"}}><u>I want to place a bet</u></div>
+            </a>
+          </div>
     </div>
     </>
   )

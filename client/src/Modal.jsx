@@ -20,12 +20,6 @@ const Modal = ({open, children, onClose, teams}) => {
         <button onClick={onClose}>x</button>
         <div className="information">
           <Stats home={home} away={away} results={matchResults}/>
-          <div>
-            <a href="https://betway.com/en/sports/grp/basketball/usa/nba" target="_blank">
-              <div style={{cursor: "pointer"}}><u>I want to place a bet</u></div>
-            </a>
-          </div>
-
         </div>
       </div>
     </>,

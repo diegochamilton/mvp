@@ -205,3 +205,8 @@ button {
   height: 48px;
   width: 48px;
 }
+
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+}
