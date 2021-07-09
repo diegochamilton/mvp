@@ -60,23 +60,23 @@ const getPoints = (homeID, awayID) => {
     var differential = ranking[homeID] - ranking[awayID];
     return {
       homeScore: Math.round(
-        Math.floor(Math.random() * (120 - 95) + 95) + differential * 0.75
+        Math.floor(Math.random() * (120 - 95) + 95) + differential * 0.75 + 1
       ),
       awayScore: Math.round(
         Math.floor(Math.random() * (115 - 93) + 93) - differential * 0.75
       ),
-      handicap: differential * 0.75 * 2 + 2,
+      handicap: differential * 1.5 + 2,
     };
   } else if (ranking[homeID] < ranking[awayID]) {
     var differential = ranking[awayID] - ranking[homeID];
     return {
       homeScore: Math.round(
-        Math.floor(Math.random() * (120 - 95) + 95) - differential * 0.75
+        Math.floor(Math.random() * (118 - 95) + 95) - differential * 0.75
       ),
       awayScore: Math.round(
-        Math.floor(Math.random() * (115 - 93) + 93) + differential * 0.75
+        Math.floor(Math.random() * (115 - 93) + 93) + differential * 0.75 + 2
       ),
-      handicap: differential * 0.75 * 2,
+      handicap: differential * 1.5 + 1,
     };
   } else {
     return {

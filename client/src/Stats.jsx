@@ -28,6 +28,9 @@ const Stats = ({home, away, results}) => {
   if (handicap % 1 === 0) {
     handicap += 0.5
   }
+  if (handicap < 4.5) {
+    handicap = 3.5
+  }
   return (
     <>
     <div className="scoreTable">
