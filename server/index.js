@@ -2,7 +2,7 @@ const express = require("express");
 const parser = require("body-parser");
 const { getStats, getTeams } = require("./helpers/apiHelpers.js");
 // const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const mockData = require("../mockData.js");
 const { getMatchResults } = require("./helpers/statsGenerator.js");
 
