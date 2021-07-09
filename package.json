@@ -1,4 +1,7 @@
 {
+    "engines": {
+      "node": "v15.12.0"
+  },
   "scripts": {
     "build:dev": "webpack -w --mode development",
     "server:dev": "npx nodemon server/index.js"
