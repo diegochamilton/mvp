@@ -60,7 +60,7 @@ const Stats = ({home, away, results}) => {
       <span>Handicap: {handicap}</span>
       <div>
             <a href="https://betway.com/en/sports/grp/basketball/usa/nba" target="_blank">
-              <div style={{cursor: "pointer"}}><u>I want to place a bet</u></div>
+              <div style={{cursor: "pointer"}}><u>Place a Bet</u></div>
             </a>
           </div>
     </div>
